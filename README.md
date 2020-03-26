@@ -2,7 +2,9 @@ Docker compose
 ===
 
 docker-compose.yml
-```version: '3.1'
+
+```
+version: '3.1'
 
 services:
 
