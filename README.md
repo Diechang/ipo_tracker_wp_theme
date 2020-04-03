@@ -10,6 +10,7 @@ services:
 
   wordpress:
     image: wordpress:php7.3
+    container_name: ipo_tracker_wp
     restart: always
     ports:
       - 8888:80
@@ -23,6 +24,7 @@ services:
 
   db:
     image: mysql:5.7
+    container_name: ipo_tracker_db
     restart: always
     environment:
       MYSQL_DATABASE: exampledb
