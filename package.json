@@ -4,7 +4,9 @@
   "description": "Wordpress theme for IPO Tracker @2020",
   "private": true,
   "scripts": {
-    "build": "webpack"
+    "watch": "webpack --mode development --watch",
+    "build:dev": "webpack --mode development",
+    "build:prd": "webpack --mode production"
   },
   "repository": {
     "type": "git",
@@ -15,6 +17,9 @@
   "license": "ISC",
   "homepage": "https://ipo-tracker.com/",
   "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "babel-loader": "^8.1.0",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11"
   }
