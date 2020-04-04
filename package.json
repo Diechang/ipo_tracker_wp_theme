@@ -1,0 +1,21 @@
+{
+  "name": "ipo_tracker_wp_theme",
+  "version": "1.0.0",
+  "description": "Wordpress theme for IPO Tracker @2020",
+  "private": true,
+  "scripts": {
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://bitbucket.org/dzlifenet/ipo_tracker_wp_theme.git"
+  },
+  "keywords": [],
+  "author": "Diechang",
+  "license": "ISC",
+  "homepage": "https://ipo-tracker.com/",
+  "devDependencies": {
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
+  }
+}
