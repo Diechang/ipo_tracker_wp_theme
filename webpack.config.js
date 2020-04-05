@@ -1,25 +1,52 @@
-const path = require('path');
+const path = require("path");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin"); // CSSを分離
+const TerserPlugin = require("terser-webpack-plugin"); // JSを圧縮
+const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin"); // CSSを圧縮
 
-module.exports = ( env, argv ) => ({
-  entry: './src/entry.js',
+module.exports = (env, argv) => ({
+  entry: "./src/entry.js",
   output: {
-    filename: 'app.js',
-    path: path.resolve(__dirname, 'js')
+    filename: "app.js",
+    path: path.resolve(__dirname, "js"),
   },
   module: {
     rules: [
+      // babel
       {
         test: /\.js$/,
         use: [
           {
-            loader: 'babel-loader',
+            loader: "babel-loader",
             options: {
-              presets: ['@babel/preset-env']
-            }
-          }
+              presets: ["@babel/preset-env"],
+            },
+          },
         ],
         exclude: /node_modules/,
-      }
-    ]
-  }
+      },
+      // sass
+      {
+        test: /\.(sa|sc|c)ss$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: "css-loader",
+            options: {
+              url: false,
+            },
+          },
+          "sass-loader",
+        ],
+      },
+    ],
+  },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: '../style.css'
+    }),
+  ],
+  // 最適化オプション
+  optimization: {
+    minimizer: [new TerserPlugin({}), new OptimizeCssAssetsPlugin({})],
+  },
 });
