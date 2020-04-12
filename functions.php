@@ -59,12 +59,6 @@ if ( ! function_exists( 'ipo_tracker_2020_setup' ) ) :
 			'caption',
 		) );
 
-		// Set up the WordPress core custom background feature.
-		add_theme_support( 'custom-background', apply_filters( 'ipo_tracker_2020_custom_background_args', array(
-			'default-color' => 'ffffff',
-			'default-image' => '',
-		) ) );
-
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
@@ -74,10 +68,10 @@ if ( ! function_exists( 'ipo_tracker_2020_setup' ) ) :
 		 * @link https://codex.wordpress.org/Theme_Logo
 		 */
 		add_theme_support( 'custom-logo', array(
-			'height'      => 250,
-			'width'       => 250,
-			'flex-width'  => true,
-			'flex-height' => true,
+			'height'      => 80,
+			'width'       => 360,
+			'flex-width'  => false,
+			'flex-height' => false,
 		) );
 	}
 endif;
