@@ -1,4 +1,5 @@
 const path = require("path");
+const webpack = require("webpack");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin"); // CSSを分離
 const TerserPlugin = require("terser-webpack-plugin"); // JSを圧縮
 const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin"); // CSSを圧縮
@@ -9,6 +10,7 @@ module.exports = (env, argv) => ({
     filename: "app.js",
     path: path.resolve(__dirname, "js"),
   },
+  // devtool: false,
   module: {
     rules: [
       // babel
@@ -41,8 +43,13 @@ module.exports = (env, argv) => ({
     ],
   },
   plugins: [
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery",
+	  "window.jQuery": "jquery"
+    }),
     new MiniCssExtractPlugin({
-      filename: '../style.css'
+      filename: "../style.css",
     }),
   ],
   // 最適化オプション

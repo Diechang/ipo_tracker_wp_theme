@@ -1,25 +1,11 @@
-html {
-	box-sizing: border-box;
-}
-
-*,
-*:before,
-*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
-	box-sizing: inherit;
-}
-
-body {
-	background: $color__background-body; /* Fallback for when there is no custom background color defined. */
-}
-
 hr {
-	background-color: $color__background-hr;
+	background-color: $border-color;
 	border: 0;
 	height: 1px;
-	margin-bottom: 1.5em;
+	@extend .mb-4;
 }
 
-@import "lists";
+// @import "lists";
 
 img {
 	height: auto; /* Make sure images are scaled correctly. */
@@ -27,7 +13,9 @@ img {
 }
 
 figure {
-	margin: 1em 0; /* Extra wide images within figure tags don't overflow the content area. */
+	max-width: 100%;
+	@extend .my-3;
+	@extend .mx-0;
 }
 
-@import "tables";
+// @import "tables";

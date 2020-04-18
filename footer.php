@@ -13,19 +13,10 @@
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'ipo_tracker_2020' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'ipo_tracker_2020' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'ipo_tracker_2020' ), 'ipo_tracker_2020', '<a href="https://ipo-tracker.com">Diechang</a>' );
-				?>
+	<footer id="colophon" class="site-footer py-2 bg-dark text-light">
+		<div class="site-info container text-center">
+			&copy; <a href="<?php echo esc_url(home_url('/')) ?>">IPO Tracker</a>.
+			<div class="text-muted"><small>designed by <a href="https://twitter.com/diechang_inv" target="_blank">Diechang.</small></div>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
