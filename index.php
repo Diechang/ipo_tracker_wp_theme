@@ -14,8 +14,9 @@
 
 get_header();
 ?>
+
 <div class="container">
-	<div class="row py-4">
+	<div class="row py-5">
 		<div class="col-lg-9">
 			<div id="primary" class="content-area">
 				<main id="main" class="site-main">

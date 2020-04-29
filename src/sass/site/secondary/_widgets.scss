@@ -1,6 +1,26 @@
 .widget {
-	margin: 0 0 1.5em;
+	@extend .mb-5;
 
+	.widget-title
+	{
+		@extend .px-3, .py-2;
+		background: $dark;
+		border-bottom: solid 3px $color-accent;
+		color: $light;
+		font-size: $font-size-base;
+		font-weight: normal;
+	}
+	ul
+	{
+		padding: 0;
+		list-style: none;
+
+		li
+		{
+			@extend .mb-1, .pb-1;
+			border-bottom: dotted 1px $border-color;
+		}
+	}
 	/* Make sure select elements fit in widgets. */
 	select {
 		max-width: 100%;

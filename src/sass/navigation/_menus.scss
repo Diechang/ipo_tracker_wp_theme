@@ -26,11 +26,19 @@
 		li
 		{
 			position: relative;
+			flex-grow: 1;
 
 			a
 			{
-				display: inline-block;
+				display: block;
+				text-decoration: none;
 				@extend .p-2;
+				text-align: center;
+
+				&:hover
+				{
+					background: $black;
+				}
 			}
 
 			&:hover
@@ -39,6 +47,17 @@
 				{
 					display: block;
 				}
+			}
+
+			&.current-menu-item:after
+			{
+				content: "";
+				position: absolute;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				height: 4px;
+				background: $color-accent;
 			}
 		}
 
@@ -49,6 +68,15 @@
 			top: 100%;
 			left: 0;
 			background: $gray-900;
+
+			li
+			{
+				a
+				{
+					@extend .px-3;
+					text-align: left;
+				}
+			}
 		}
 	}
 

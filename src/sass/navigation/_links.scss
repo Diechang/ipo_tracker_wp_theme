@@ -1,13 +1,13 @@
 a {
-	color: $color__link;
+	color: $color-theme;
 
-	&:visited {
-		color: $color__link-visited;
-	}
+	// &:visited {
+	// 	color: $md-teal-700;
+	// }
 	&:hover,
 	&:focus,
 	&:active {
-		color: $color__link-hover;
+		color: $md-teal-700;
 	}
 	&:focus {
 		outline: thin dotted;

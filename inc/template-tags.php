@@ -12,9 +12,9 @@ if ( ! function_exists( 'ipo_tracker_2020_posted_on' ) ) :
 	 * Prints HTML with meta information for the current post-date/time.
 	 */
 	function ipo_tracker_2020_posted_on() {
-		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+		$time_string = '<time class="entry-date published updated" title="公開日" datetime="%1$s"><i class="far fa-clock"></i> %2$s</time>';
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+			$time_string = '<time class="entry-date published mr-2" title="公開日" datetime="%1$s"><i class="far fa-clock"></i> %2$s</time> <time class="updated" title="最終更新日" datetime="%3$s"><i class="fas fa-history"></i> %4$s</time>';
 		}
 
 		$time_string = sprintf( $time_string,
@@ -24,13 +24,7 @@ if ( ! function_exists( 'ipo_tracker_2020_posted_on' ) ) :
 			esc_html( get_the_modified_date() )
 		);
 
-		$posted_on = sprintf(
-			/* translators: %s: post date. */
-			esc_html_x( 'Posted on %s', 'post date', 'ipo_tracker_2020' ),
-			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
-		);
-
-		echo '<span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
+		echo '<div class="posted-on text-muted">' . $time_string . '</div>'; // WPCS: XSS OK.
 
 	}
 endif;
@@ -62,52 +56,22 @@ if ( ! function_exists( 'ipo_tracker_2020_entry_footer' ) ) :
 			$categories_list = get_the_category_list( esc_html__( ', ', 'ipo_tracker_2020' ) );
 			if ( $categories_list ) {
 				/* translators: 1: list of categories. */
-				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'ipo_tracker_2020' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+				printf( '<span class="cat-links mr-2"><i class="fas fa-tags"></i> ' . esc_html__( '%1$s', 'ipo_tracker_2020' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 			}
 
 			/* translators: used between list items, there is a space after the comma */
 			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'ipo_tracker_2020' ) );
 			if ( $tags_list ) {
 				/* translators: 1: list of tags. */
-				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'ipo_tracker_2020' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+				printf( '<span class="tags-links mr-2"><i class="fas fa-hashtag"></i> ' . esc_html__( '%1$s', 'ipo_tracker_2020' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 			}
 		}
 
 		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-			echo '<span class="comments-link">';
-			comments_popup_link(
-				sprintf(
-					wp_kses(
-						/* translators: %s: post title */
-						__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'ipo_tracker_2020' ),
-						array(
-							'span' => array(
-								'class' => array(),
-							),
-						)
-					),
-					get_the_title()
-				)
-			);
+			echo '<span class="comments-link mr-2"><i class="fas fa-comment"></i> ';
+			comments_popup_link('0件', '1件', '%件');
 			echo '</span>';
 		}
-
-		edit_post_link(
-			sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Edit <span class="screen-reader-text">%s</span>', 'ipo_tracker_2020' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				get_the_title()
-			),
-			'<span class="edit-link">',
-			'</span>'
-		);
 	}
 endif;
 

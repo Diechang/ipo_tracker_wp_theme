@@ -23,7 +23,7 @@
 			<div class="entry-meta">
 				<?php
 				ipo_tracker_2020_posted_on();
-				ipo_tracker_2020_posted_by();
+				// ipo_tracker_2020_posted_by();
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
@@ -47,7 +47,7 @@
 		) );
 
 		wp_link_pages( array(
-			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'ipo_tracker_2020' ),
+			'before' => '<div class="page-links">' . esc_html__( 'ページ', 'ipo_tracker_2020' ),
 			'after'  => '</div>',
 		) );
 		?>

@@ -20,3 +20,9 @@ $yellow:  $md-yellow-500;
 $green:   $md-green-500;
 $teal:    $md-teal-500;
 $cyan:    $md-cyan-500;
+
+// theme colors
+$color-theme: $md-teal-500;
+$color-theme-dark: darken($color-theme, 10%);
+$color-accent: $md-teal-a700;
+$color-accent-dark: darken($color-accent, 10%);;

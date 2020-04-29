@@ -347,19 +347,19 @@ h1, h2, h3, h4, h5, h6,
   line-height: 1.2; }
 
 h1, .h1 {
-  font-size: 2.5rem; }
-
-h2, .h2 {
   font-size: 2rem; }
 
+h2, .h2 {
+  font-size: 1.6rem; }
+
 h3, .h3 {
-  font-size: 1.75rem; }
+  font-size: 1.4rem; }
 
 h4, .h4 {
-  font-size: 1.5rem; }
+  font-size: 1.2rem; }
 
 h5, .h5 {
-  font-size: 1.25rem; }
+  font-size: 1.1rem; }
 
 h6, .h6 {
   font-size: 1rem; }
@@ -4764,12 +4764,14 @@ button.bg-danger:hover,
 button.bg-danger:focus {
   background-color: #ea1c0d !important; }
 
-.bg-light {
+.bg-light, .entry-footer {
   background-color: #f5f5f5 !important; }
 
-a.bg-light:hover, a.bg-light:focus,
+a.bg-light:hover, a.entry-footer:hover, a.bg-light:focus, a.entry-footer:focus,
 button.bg-light:hover,
-button.bg-light:focus {
+button.entry-footer:hover,
+button.bg-light:focus,
+button.entry-footer:focus {
   background-color: gainsboro !important; }
 
 .bg-dark {
@@ -5629,7 +5631,7 @@ figure {
 .mx-1 {
   margin-right: 0.25rem !important; }
 
-.mb-1,
+.mb-1, .widget ul li,
 .my-1 {
   margin-bottom: 0.25rem !important; }
 
@@ -5659,18 +5661,22 @@ figure {
 .m-3 {
   margin: 1rem !important; }
 
-.mt-3,
+.mt-3, .page-content,
+.entry-content,
+.entry-summary,
 .my-3,
-figure {
+hr,
+a.post-thumbnail {
   margin-top: 1rem !important; }
 
-.mr-3, .alignleft, .alignright, .aligncenter,
+.mr-3, .alignleft, a.post-thumbnail,
 .mx-3 {
   margin-right: 1rem !important; }
 
-.mb-3,
+.mb-3, figure, .page-links,
 .my-3,
-figure {
+hr,
+a.post-thumbnail {
   margin-bottom: 1rem !important; }
 
 .ml-3, .alignright,
@@ -5688,7 +5694,7 @@ figure {
 .mx-4 {
   margin-right: 1.5rem !important; }
 
-.mb-4, hr,
+.mb-4,
 .my-4 {
   margin-bottom: 1.5rem !important; }
 
@@ -5707,7 +5713,8 @@ figure {
 .mx-5 {
   margin-right: 3rem !important; }
 
-.mb-5,
+.mb-5, .widget, .post,
+.page,
 .my-5 {
   margin-bottom: 3rem !important; }
 
@@ -5738,57 +5745,77 @@ figure {
   padding: 0.25rem !important; }
 
 .pt-1,
-.py-1 {
+.py-1,
+.entry-footer {
   padding-top: 0.25rem !important; }
 
 .pr-1,
 .px-1 {
   padding-right: 0.25rem !important; }
 
-.pb-1,
-.py-1 {
+.pb-1, .widget ul li, .entry-title,
+.py-1,
+.entry-footer {
   padding-bottom: 0.25rem !important; }
 
 .pl-1,
 .px-1 {
   padding-left: 0.25rem !important; }
 
-.p-2, .main-navigation ul.menu li a {
+.p-2, .main-navigation ul.menu li a, .entry-content h3, .entry-content h4, .entry-content pre {
   padding: 0.5rem !important; }
 
 .pt-2,
-.py-2 {
+.py-2,
+.widget .widget-title,
+.entry-content table th,
+.entry-content table td {
   padding-top: 0.5rem !important; }
 
 .pr-2,
-.px-2 {
+.px-2,
+.entry-footer {
   padding-right: 0.5rem !important; }
 
 .pb-2,
-.py-2 {
+.py-2,
+.widget .widget-title,
+.entry-content table th,
+.entry-content table td {
   padding-bottom: 0.5rem !important; }
 
-.pl-2,
-.px-2 {
+.pl-2, .entry-content h5, .entry-content h6,
+.px-2,
+.entry-footer {
   padding-left: 0.5rem !important; }
 
-.p-3 {
+.p-3, .entry-content h1, .entry-content h2 {
   padding: 1rem !important; }
 
 .pt-3,
-.py-3 {
+.py-3,
+.entry-content blockquote {
   padding-top: 1rem !important; }
 
 .pr-3,
-.px-3 {
+.px-3,
+.main-navigation ul.menu ul.sub-menu li a,
+.widget .widget-title,
+.entry-content table th,
+.entry-content table td {
   padding-right: 1rem !important; }
 
 .pb-3,
-.py-3 {
+.py-3,
+.entry-content blockquote {
   padding-bottom: 1rem !important; }
 
 .pl-3,
-.px-3 {
+.px-3,
+.main-navigation ul.menu ul.sub-menu li a,
+.widget .widget-title,
+.entry-content table th,
+.entry-content table td {
   padding-left: 1rem !important; }
 
 .p-4 {
@@ -5818,7 +5845,8 @@ figure {
   padding-top: 3rem !important; }
 
 .pr-5,
-.px-5 {
+.px-5,
+.entry-content blockquote {
   padding-right: 3rem !important; }
 
 .pb-5,
@@ -5826,7 +5854,8 @@ figure {
   padding-bottom: 3rem !important; }
 
 .pl-5,
-.px-5 {
+.px-5,
+.entry-content blockquote {
   padding-left: 3rem !important; }
 
 .m-n1 {
@@ -7217,6 +7246,15 @@ figure {
 /*--------------------------------------------------------------
 ## Links
 --------------------------------------------------------------*/
+a {
+  color: #009688; }
+  a:hover, a:focus, a:active {
+    color: #00796b; }
+  a:focus {
+    outline: thin dotted; }
+  a:hover, a:active {
+    outline: 0; }
+
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
@@ -7238,17 +7276,32 @@ figure {
   flex-wrap: nowrap;
   white-space: nowrap; }
   .main-navigation ul.menu li {
-    position: relative; }
+    position: relative;
+    flex-grow: 1; }
     .main-navigation ul.menu li a {
-      display: inline-block; }
+      display: block;
+      text-decoration: none;
+      text-align: center; }
+      .main-navigation ul.menu li a:hover {
+        background: #000; }
     .main-navigation ul.menu li:hover ul.sub-menu {
       display: block; }
+    .main-navigation ul.menu li.current-menu-item:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 4px;
+      background: #00bfa5; }
   .main-navigation ul.menu ul.sub-menu {
     display: none;
     position: absolute;
     top: 100%;
     left: 0;
     background: #212121; }
+    .main-navigation ul.menu ul.sub-menu li a {
+      text-align: left; }
 
 @media (min-width: 992px) {
   .main-navigation .menu-container {
@@ -7271,8 +7324,8 @@ figure {
 .aligncenter {
   clear: both;
   display: block;
-  margin-left: auto;
-  margin-right: auto; }
+  margin-left: auto !important;
+  margin-right: auto !important; }
 
 /*--------------------------------------------------------------
 # Clearings
@@ -7280,11 +7333,27 @@ figure {
 /*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
+.widget {
+  /* Make sure select elements fit in widgets. */ }
+  .widget .widget-title {
+    background: #424242;
+    border-bottom: solid 3px #00bfa5;
+    color: #f5f5f5;
+    font-size: 1rem;
+    font-weight: normal; }
+  .widget ul {
+    padding: 0;
+    list-style: none; }
+    .widget ul li {
+      border-bottom: dotted 1px #e0e0e0; }
+  .widget select {
+    max-width: 100%; }
+
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
-## Header and Footer
+## Layouts
 --------------------------------------------------------------*/
 .site-header {
   position: sticky;
@@ -7295,6 +7364,10 @@ figure {
   .site-header .main-navigation {
     background: rgba(0, 0, 0, 0.8); }
 
+.site-content {
+  position: relative;
+  z-index: 0; }
+
 .site-footer a {
   color: inherit;
   text-decoration: underline; }
@@ -7304,22 +7377,97 @@ figure {
 --------------------------------------------------------------*/
 .sticky {
   display: block; }
+  .sticky .entry-title {
+    border-bottom-color: #2196f3; }
 
-.post,
-.page {
-  margin: 0 0 1.5em; }
+.entry-title {
+  border-bottom: solid 3px #009688;
+  font-weight: normal; }
+  .entry-title a {
+    color: inherit;
+    text-decoration: none; }
+    .entry-title a:hover {
+      color: #757575; }
 
-.updated:not(.published) {
-  display: none; }
+.entry-meta {
+  font-size: 0.875rem; }
 
-.page-content,
-.entry-content,
-.entry-summary {
-  margin: 1.5em 0 0; }
+.entry-content h1, .entry-content h2 {
+  background: #00bfa5;
+  border-radius: 0.25rem;
+  color: #fff;
+  font-weight: normal; }
+
+.entry-content h1 {
+  border-bottom: solid 3px #008c79; }
+
+.entry-content h2 {
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5); }
+
+.entry-content h3 {
+  border-bottom: double 3px #009688; }
+
+.entry-content h4 {
+  border-bottom: dotted 2px #009688; }
+
+.entry-content h5 {
+  border-left: solid 3px #009688; }
+
+.entry-content h6 {
+  border-left: solid 2px #009688; }
+
+.entry-content blockquote {
+  position: relative;
+  overflow: hidden;
+  background: #f5f5f5;
+  border-left: solid 3px #e0e0e0;
+  border-radius: 0.25rem; }
+  .entry-content blockquote::before {
+    content: "\201C";
+    position: absolute;
+    top: 0.5rem;
+    left: 1rem;
+    color: #e0e0e0;
+    font-size: 3rem; }
+  .entry-content blockquote p:last-child {
+    margin: 0; }
+
+.entry-content table {
+  width: 100%;
+  margin-bottom: 1rem; }
+  .entry-content table th, .entry-content table td {
+    border: solid 1px #e0e0e0; }
+  .entry-content table thead th {
+    background: #eeeeee; }
+  .entry-content table tbody th {
+    background: #f5f5f5; }
+
+.entry-content pre {
+  overflow: auto;
+  max-width: 100%;
+  margin-bottom: 1rem;
+  background: #424242;
+  color: #f5f5f5;
+  line-height: 1.5; }
+
+.post-thumbnail {
+  text-align: center; }
+
+a.post-thumbnail {
+  float: left;
+  max-width: 40%; }
+
+.entry-footer {
+  clear: both;
+  border-top: solid 1px #e0e0e0;
+  border-bottom: solid 1px #e0e0e0;
+  font-size: 0.875rem; }
+  .entry-footer a {
+    color: inherit;
+    text-decoration: underline; }
 
 .page-links {
-  clear: both;
-  margin: 0 0 1.5em; }
+  clear: both; }
 
 /*--------------------------------------------------------------
 ## Comments

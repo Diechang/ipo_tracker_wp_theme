@@ -2,18 +2,15 @@
 	display: inline;
 	float: left;
 	@extend .mr-3;
-	@extend .mr-3;
 }
 
 .alignright {
 	display: inline;
 	float: right;
 	@extend .ml-3;
-	@extend .mr-3;
 }
 
 .aligncenter {
 	clear: both;
 	@include center-block;
-	@extend .mr-3;
 }

@@ -28,10 +28,8 @@
 				<?php the_custom_logo(); ?>
 			</div>
 			<div class="p-2 text-nowrap">
-				<a href="#" class="btn btn-info"><i class="fas fa-rss"></i></a>
-				<a href="#" class="btn btn-info"><i class="fab fa-twitter"></i></a>
-				<a href="#" class="btn btn-info"><i class="fas fa-rss"></i></a>
-				<a href="#" class="btn btn-info"><i class="fab fa-twitter"></i></a>
+				<a href="<?php echo esc_url( get_bloginfo( 'rss2_url' ) ); ?>" class="btn btn-info" target="_blank"><i class="fas fa-rss"></i></a>
+				<a href="https://twitter.com/diechang_inv" class="btn btn-info" target="_blank"><i class="fab fa-twitter"></i></a>
 			</div>
 		</div>
 

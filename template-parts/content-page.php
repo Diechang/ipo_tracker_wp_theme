@@ -21,7 +21,7 @@
 		the_content();
 
 		wp_link_pages( array(
-			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'ipo_tracker_2020' ),
+			'before' => '<div class="page-links">' . esc_html__( 'ページ', 'ipo_tracker_2020' ),
 			'after'  => '</div>',
 		) );
 		?>
