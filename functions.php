@@ -176,3 +176,9 @@ add_action( 'init', 'disable_emojis' );
 
 // 管理バー非表示
 // add_filter('show_admin_bar', '__return_false');
+
+// 概要表示 ... カスタマイズ
+function new_excerpt_more($more) {
+	return ' ... ';
+}
+add_filter('excerpt_more', 'new_excerpt_more');

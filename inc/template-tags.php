@@ -72,6 +72,13 @@ if ( ! function_exists( 'ipo_tracker_2020_entry_footer' ) ) :
 			comments_popup_link('0件', '1件', '%件');
 			echo '</span>';
 		}
+
+		edit_post_link(
+			'編集',
+			'<span class="edit-link"><i class="fas fa-edit"></i> ',
+			'</span>'
+		);
+
 	}
 endif;
 
@@ -83,7 +90,7 @@ if ( ! function_exists( 'ipo_tracker_2020_post_thumbnail' ) ) :
 	 * element when on single views.
 	 */
 	function ipo_tracker_2020_post_thumbnail() {
-		if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
+		if ( post_password_required() || is_attachment() ) {
 			return;
 		}
 
@@ -97,6 +104,7 @@ if ( ! function_exists( 'ipo_tracker_2020_post_thumbnail' ) ) :
 		<?php else : ?>
 
 		<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
+			<?php if( has_post_thumbnail() ):?>
 			<?php
 			the_post_thumbnail( 'post-thumbnail', array(
 				'alt' => the_title_attribute( array(
@@ -104,6 +112,9 @@ if ( ! function_exists( 'ipo_tracker_2020_post_thumbnail' ) ) :
 				) ),
 			) );
 			?>
+			<?php else: ?>
+			<span class="no-image"></span>
+			<?php endif; ?>
 		</a>
 
 		<?php

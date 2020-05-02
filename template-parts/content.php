@@ -29,22 +29,15 @@
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php ipo_tracker_2020_post_thumbnail(); ?>
+	<?php if( !is_singular() ) ipo_tracker_2020_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php
-		the_content( sprintf(
-			wp_kses(
-				/* translators: %s: Name of current post. Only visible to screen readers */
-				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'ipo_tracker_2020' ),
-				array(
-					'span' => array(
-						'class' => array(),
-					),
-				)
-			),
-			get_the_title()
-		) );
+		if ( is_singular() ) {
+			the_content('続きを読む');
+		} else {
+			the_excerpt();
+		}
 
 		wp_link_pages( array(
 			'before' => '<div class="page-links">' . esc_html__( 'ページ', 'ipo_tracker_2020' ),

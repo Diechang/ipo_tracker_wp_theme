@@ -164,6 +164,23 @@ a.post-thumbnail
 	float: left;
 	@extend .mr-3, .my-3;
 	max-width: 40%;
+	text-decoration: none;
+
+	.no-image
+	{
+		display: block;
+		background: $gray-200;
+		width: 400px;
+		height: 200px;
+		max-width: 100%;
+		line-height: 200px;
+
+		&::after
+		{
+			content: "no image";
+			color: $gray-400;
+		}
+	}
 }
 
 .entry-footer
@@ -184,5 +201,20 @@ a.post-thumbnail
 
 .page-links {
 	clear: both;
+	@extend .mb-3;
+}
+
+.edit-link
+{
+	color: $color-theme !important;
+
+	a.post-edit-link
+	{
+		color: inherit !important;
+	}
+}
+
+.post-navigation
+{
 	@extend .mb-3;
 }
