@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "watch": "webpack --mode development --watch",
-    "build:dev": "webpack --mode development",
+    "watch:prd": "webpack --mode production --watch",
+    "build": "webpack --mode development",
     "build:prd": "webpack --mode production"
   },
   "repository": {
