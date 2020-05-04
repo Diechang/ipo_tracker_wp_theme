@@ -1,3 +1,18 @@
+.comments-area
+{
+
+}
+
+.comments-title
+{
+	@extend .p-3;
+	background: $dark;
+	border-radius: $border-radius;
+	color: $light;
+	font-weight: normal;
+	text-shadow: 1px 1px 1px rgba($black, .5);
+}
+
 .comment-content a {
 	word-wrap: break-word;
 }

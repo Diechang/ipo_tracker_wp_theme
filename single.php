@@ -21,9 +21,19 @@ get_header();
 					the_post();
 
 					get_template_part( 'template-parts/content', get_post_type() );
+				?>
 
-					the_post_navigation();
+				<!-- 投稿ナビゲーション -->
+				<div class="row mb-5">
+					<?php if(get_previous_post()) :?>
+					<div class="col"><?php previous_post_link(); ?></div>
+					<?php endif; ?>
+					<?php if(get_next_post()) :?>
+					<div class="col"><?php next_post_link(); ?></div>
+					<?php endif; ?>
+				</div>
 
+				<?php
 					// If comments are open or we have at least one comment, load up the comment template.
 					if ( comments_open() || get_comments_number() ) :
 						comments_template();
