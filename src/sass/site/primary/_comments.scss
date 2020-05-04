@@ -13,9 +13,132 @@
 	text-shadow: 1px 1px 1px rgba($black, .5);
 }
 
-.comment-content a {
-	word-wrap: break-word;
+.comment-list
+{
+	padding: 0;
+	list-style: none;
+
+	.comment
+	{
+		margin-bottom: map-get($spacers, 3);
+		padding: map-get($spacers, 3);
+		border: solid 1px $border-color;
+		border-radius: $border-radius;
+
+		.comment-body
+		{
+			.comment-author
+			{
+				@extend .mb-1;
+			}
+			.comment-metadata
+			{
+				@extend .mb-2;
+				color: $text-muted;
+				font-size: $font-size-sm;
+
+				a
+				{
+					color: inherit;
+					text-decoration: underline;
+				}
+			}
+
+			.comment-content
+			{
+				@extend .mb-2;
+
+				a {
+					word-wrap: break-word;
+				}
+
+				p:last-child {
+					margin-bottom: 0;
+				}
+			}
+
+			.comment-reply-link
+			{
+				display: inline-block;
+				padding: map-get($spacers, 1) map-get($spacers, 2);
+				background: $color-theme;
+				border-radius: $border-radius-sm;
+				color: $light;
+				font-size: $font-size-sm;
+				text-decoration: none;
+			}
+		}
+
+		.children
+		{
+			margin-top: map-get($spacers, 3);
+			padding: 0;
+			list-style: none;
+		}
+
+		&.bypostauthor
+		{
+			display: block;
+			background: $md-teal-50;
+		}
+	}
 }
-.bypostauthor {
-	display: block;
+
+.comment-respond
+{
+	.comment-reply-title
+	{
+		padding: map-get($spacers, 2);
+		border-bottom: double 3px $color-theme;
+	}
+
+	.comment-form
+	{
+		padding: map-get($spacers, 5);
+		background: $light;
+		border: solid 1px $border-color;
+		border-radius: $border-radius;
+
+		span.required
+		{
+			color: $color-danger;
+		}
+
+		.comment-notes
+		{
+			color: $text-muted;
+		}
+
+		.comment-form-comment,
+		.comment-form-author,
+		.comment-form-email,
+		.comment-form-url
+		{
+			label
+			{
+				display: block;
+			}
+			input, textarea
+			{
+				width: 100%;
+				padding: map-get($spacers, 2);
+				border: solid 1px $border-color;
+				border-radius: $border-radius-sm;
+			}
+		}
+
+		.form-submit
+		{
+			margin-bottom: 0;
+
+			.submit
+			{
+				padding: map-get($spacers, 3) map-get($spacers, 4);
+				background: $dark;
+				border: none;
+				border-radius: $border-radius;
+				color: $light;
+			}
+		}
+	}
 }

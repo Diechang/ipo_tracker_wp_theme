@@ -2,6 +2,9 @@
 import "./sass/style.scss"
 // js
 import "bootstrap"
+// import jQuery from "jquery"
+window.$ = window.jQuery = jQuery;
+
 // fontawesome
 import { library, dom } from '@fortawesome/fontawesome-svg-core'
 import { faClock } from '@fortawesome/free-regular-svg-icons'
