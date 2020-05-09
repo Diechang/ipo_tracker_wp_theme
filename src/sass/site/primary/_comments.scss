@@ -5,7 +5,7 @@
 
 .comments-title
 {
-	@extend .p-3;
+	padding: map-get($spacers, 3);
 	background: $dark;
 	border-radius: $border-radius;
 	color: $light;
@@ -29,11 +29,11 @@
 		{
 			.comment-author
 			{
-				@extend .mb-1;
+				margin-bottom: map-get($spacers, 1);
 			}
 			.comment-metadata
 			{
-				@extend .mb-2;
+				margin-bottom: map-get($spacers, 2);
 				color: $text-muted;
 				font-size: $font-size-sm;
 
@@ -46,7 +46,7 @@
 
 			.comment-content
 			{
-				@extend .mb-2;
+				margin-bottom: map-get($spacers, 2);
 
 				a {
 					word-wrap: break-word;

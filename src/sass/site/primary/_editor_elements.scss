@@ -1,0 +1,113 @@
+// headlines
+h1, h2
+{
+	padding: map-get($spacers, 3);
+	background: $color-theme;
+	border-radius: $border-radius;
+	color: $white;
+	font-weight: normal;
+}
+
+h1
+{
+	border-bottom: solid 3px $color-theme-dark;
+}
+
+h2
+{
+	text-shadow: 1px 1px 1px rgba($black, .5);
+}
+
+h3, h4
+{
+	padding: map-get($spacers, 2);
+}
+
+h3
+{
+	border-bottom: double 3px $color-theme;
+}
+
+h4
+{
+	border-bottom: dotted 2px $color-theme;
+}
+
+h5, h6
+{
+	padding-left: map-get($spacers, 2);
+}
+
+h5
+{
+	border-left: solid 3px $color-theme;
+}
+
+h6
+{
+	border-left: solid 2px $color-theme;
+}
+
+blockquote
+{
+	padding: map-get($spacers, 3) map-get($spacers, 5);
+	position: relative;
+	overflow: hidden;
+	background: $gray-100;
+	border-left: solid 3px $border-color;
+	border-radius: $border-radius;
+
+	&::before
+	{
+		content: "\201C";
+		position: absolute;
+		top: $spacer / 2;
+		left: $spacer;
+		color: $border-color;
+		font-size: 3rem;
+	}
+
+	p:last-child
+	{
+		margin: 0;
+	}
+}
+
+table
+{
+	width: 100%;
+	margin-bottom: $spacer;
+
+	th, td
+	{
+		padding: map-get($spacers, 2) map-get($spacers, 3);
+		border: solid 1px $border-color;
+	}
+
+	thead
+	{
+		th
+		{
+			background: $gray-200;
+		}
+	}
+
+	tbody
+	{
+		th
+		{
+			background: $gray-100;
+		}
+	}
+}
+
+
+pre {
+	overflow: auto;
+	max-width: 100%;
+	margin-bottom: $spacer;
+	padding: map-get($spacers, 2);
+	background: $dark;
+	color: $light;
+	line-height: 1.5;
+}

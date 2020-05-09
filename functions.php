@@ -73,6 +73,9 @@ if ( ! function_exists( 'ipo_tracker_2020_setup' ) ) :
 			'flex-width'  => false,
 			'flex-height' => false,
 		) );
+		// エディタにCSS追加(default: editor-style.css)
+		add_theme_support( 'editor-styles' );
+		add_editor_style();
 	}
 endif;
 add_action( 'after_setup_theme', 'ipo_tracker_2020_setup' );

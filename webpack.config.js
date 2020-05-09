@@ -3,11 +3,16 @@ const webpack = require("webpack");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin"); // CSSを分離
 const TerserPlugin = require("terser-webpack-plugin"); // JSを圧縮
 const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin"); // CSSを圧縮
+const FixStyleOnlyEntries = require("webpack-fix-style-only-entries"); // [style].jsを出力しない
 
 module.exports = (env, argv) => ({
-	entry: "./src/entry.js",
+	entry: {
+		"app": "./src/js/app.js",
+		"style": "./src/sass/style.scss",
+		"editor-style": "./src/sass/editor-style.scss"
+	},
 	output: {
-		filename: "app.js",
+		filename: "[name].js",
 		path: path.resolve(__dirname, "js"),
 	},
 	// devtool: false,
@@ -70,8 +75,9 @@ module.exports = (env, argv) => ({
 			jQuery: "jquery",
 			"window.jQuery": "jquery",
 		}),
+		new FixStyleOnlyEntries(),
 		new MiniCssExtractPlugin({
-			filename: "../style.css",
+			filename: "../[name].css",
 		}),
 	],
 	// 最適化オプション

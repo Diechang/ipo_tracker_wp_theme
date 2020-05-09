@@ -2,7 +2,8 @@ hr {
 	background-color: $border-color;
 	border: 0;
 	height: 1px;
-	@extend .my-3;
+	margin-top: map-get($spacers, 3);
+	margin-bottom: map-get($spacers, 3);
 }
 
 // @import "lists";
@@ -14,7 +15,7 @@ img {
 
 figure {
 	max-width: 100%;
-	@extend .mx-0, .mb-3;
+	margin-top: 0 0 map-get($spacers, 3);
 }
 
 // @import "tables";

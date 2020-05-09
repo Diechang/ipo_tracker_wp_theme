@@ -9,12 +9,12 @@
 
 .post,
 .page {
-	@extend .mb-5;
+	margin-bottom: map-get($spacers, 5);
 }
 
 .entry-title
 {
-	@extend .pb-1;
+	padding-bottom: map-get($spacers, 1);
 	border-bottom: solid 3px $color-theme;
 	font-weight: normal;
 
@@ -37,122 +37,10 @@
 .page-content,
 .entry-content,
 .entry-summary {
-	@extend .mt-3;
+	margin-top: map-get($spacers, 3);
 }
 .entry-content {
-	// headlines
-	h1, h2
-	{
-		@extend .p-3;
-		background: $color-theme;
-		border-radius: $border-radius;
-		color: $white;
-		font-weight: normal;
-	}
-
-	h1
-	{
-		border-bottom: solid 3px $color-theme-dark;
-	}
-
-	h2
-	{
-		text-shadow: 1px 1px 1px rgba($black, .5);
-	}
-
-	h3, h4
-	{
-		@extend .p-2;
-	}
-
-	h3
-	{
-		border-bottom: double 3px $color-theme;
-	}
-
-	h4
-	{
-		border-bottom: dotted 2px $color-theme;
-	}
-
-	h5, h6
-	{
-		@extend .pl-2;
-	}
-
-	h5
-	{
-		border-left: solid 3px $color-theme;
-	}
-
-	h6
-	{
-		border-left: solid 2px $color-theme;
-	}
-
-	blockquote
-	{
-		@extend .px-5, .py-3;
-		position: relative;
-		overflow: hidden;
-		background: $gray-100;
-		border-left: solid 3px $border-color;
-		border-radius: $border-radius;
-
-		&::before
-		{
-			content: "\201C";
-			position: absolute;
-			top: $spacer / 2;
-			left: $spacer;
-			color: $border-color;
-			font-size: 3rem;
-		}
-
-		p:last-child
-		{
-			margin: 0;
-		}
-	}
-
-	table
-	{
-		width: 100%;
-		margin-bottom: $spacer;
-
-		th, td
-		{
-			@extend .px-3, .py-2;
-			border: solid 1px $border-color;
-		}
-
-		thead
-		{
-			th
-			{
-				background: $gray-200;
-			}
-		}
-
-		tbody
-		{
-			th
-			{
-				background: $gray-100;
-			}
-		}
-	}
-
-
-	pre {
-		overflow: auto;
-		max-width: 100%;
-		margin-bottom: $spacer;
-		@extend .p-2;
-		background: $dark;
-		color: $light;
-		line-height: 1.5;
-	}
+	@import "editor_elements";
 }
 
 .post-thumbnail
@@ -191,7 +79,8 @@ a.post-thumbnail
 .entry-footer
 {
 	clear: both;
-	@extend .px-2, .py-1, .bg-light;
+	padding: map-get($spacers, 1) map-get($spacers, 2);
+	background: $light;
 	border-top: solid 1px $border-color;
 	border-bottom: solid 1px $border-color;
 
@@ -206,7 +95,7 @@ a.post-thumbnail
 
 .page-links {
 	clear: both;
-	@extend .mb-3;
+	margin-bottom: map-get($spacers, 3);
 }
 
 .edit-link
@@ -221,7 +110,7 @@ a.post-thumbnail
 
 .post-navigation
 {
-	@extend .mb-3;
+	margin-bottom: map-get($spacers, 3);
 }
 
 

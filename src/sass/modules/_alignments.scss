@@ -1,13 +1,13 @@
 .alignleft {
 	display: inline;
 	float: left;
-	@extend .mr-3;
+	margin-right: map-get($spacers, 3);
 }
 
 .alignright {
 	display: inline;
 	float: right;
-	@extend .ml-3;
+	margin-left: map-get($spacers, 3);
 }
 
 .aligncenter {

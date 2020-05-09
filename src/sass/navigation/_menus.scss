@@ -33,7 +33,7 @@
 			{
 				display: block;
 				text-decoration: none;
-				@extend .p-2;
+				padding: map-get($spacers, 2);
 				text-align: center;
 
 				&:hover
@@ -74,7 +74,7 @@
 			{
 				a
 				{
-					@extend .px-3;
+					padding: 0 map-get($spacers, 3);
 					text-align: left;
 				}
 			}
