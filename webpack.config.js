@@ -78,6 +78,7 @@ module.exports = (env, argv) => ({
 		new FixStyleOnlyEntries(),
 		new MiniCssExtractPlugin({
 			filename: "../[name].css",
+			allChunks: false
 		}),
 	],
 	// 最適化オプション

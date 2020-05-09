@@ -1,6 +1,7 @@
 // headlines
 h1, h2
 {
+	margin-bottom: map-get($spacers, 3);
 	padding: map-get($spacers, 3);
 	background: $color-theme;
 	border-radius: $border-radius;
