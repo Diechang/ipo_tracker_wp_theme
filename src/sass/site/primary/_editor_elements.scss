@@ -16,11 +16,13 @@ h1
 
 h2
 {
+	margin-top: map-get($spacers, 4);
 	text-shadow: 1px 1px 1px rgba($black, .5);
 }
 
 h3, h4
 {
+	margin-top: map-get($spacers, 3);
 	padding: map-get($spacers, 2);
 }
 
@@ -36,6 +38,7 @@ h4
 
 h5, h6
 {
+	margin-top: map-get($spacers, 3);
 	padding-left: map-get($spacers, 2);
 }
 

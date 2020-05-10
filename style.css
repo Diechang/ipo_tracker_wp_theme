@@ -3375,15 +3375,15 @@ a:hover, a:active { outline: 0; }
 
 .entry-content h1 { border-bottom: solid 3px #00635a; }
 
-.entry-content h2 { text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5); }
+.entry-content h2 { margin-top: 1.5rem; text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5); }
 
-.entry-content h3, .entry-content h4 { padding: 0.5rem; }
+.entry-content h3, .entry-content h4 { margin-top: 1rem; padding: 0.5rem; }
 
 .entry-content h3 { border-bottom: double 3px #009688; }
 
 .entry-content h4 { border-bottom: dotted 2px #009688; }
 
-.entry-content h5, .entry-content h6 { padding-left: 0.5rem; }
+.entry-content h5, .entry-content h6 { margin-top: 1rem; padding-left: 0.5rem; }
 
 .entry-content h5 { border-left: solid 3px #009688; }
 

@@ -2,7 +2,6 @@
 @import "variables-site/variables-site";
 @import "~bootstrap/scss/bootstrap";
 
-
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
@@ -12,3 +11,6 @@
 # Content
 --------------------------------------------------------------*/
 @import "site/primary/editor_elements";
+
+// for classic editor
+.wp-block-freeform{}
