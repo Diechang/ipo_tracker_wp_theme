@@ -2,14 +2,13 @@ const path = require("path");
 const webpack = require("webpack");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin"); // CSSを分離
 const TerserPlugin = require("terser-webpack-plugin"); // JSを圧縮
-const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin"); // CSSを圧縮
 const FixStyleOnlyEntries = require("webpack-fix-style-only-entries"); // [style].jsを出力しない
 
 module.exports = (env, argv) => ({
 	entry: {
-		"app": "./src/js/app.js",
-		"style": "./src/sass/style.scss",
-		"editor-style": "./src/sass/editor-style.scss"
+		app: "./src/js/app.js",
+		style: "./src/sass/style.scss",
+		"editor-style": "./src/sass/editor-style.scss",
 	},
 	output: {
 		filename: "[name].js",
@@ -50,7 +49,14 @@ module.exports = (env, argv) => ({
 							},
 						},
 					},
-					"sass-loader",
+					{
+						loader: "sass-loader",
+						options: {
+							sassOptions: {
+								outputStyle: "compact",
+							},
+						},
+					},
 				],
 			},
 			// expose jQuery
@@ -78,11 +84,11 @@ module.exports = (env, argv) => ({
 		new FixStyleOnlyEntries(),
 		new MiniCssExtractPlugin({
 			filename: "../[name].css",
-			allChunks: false
+			allChunks: false,
 		}),
 	],
 	// 最適化オプション
 	optimization: {
-		minimizer: [new TerserPlugin({}), new OptimizeCssAssetsPlugin({})],
+		minimizer: [new TerserPlugin({})],
 	},
 });
