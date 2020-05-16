@@ -15,8 +15,20 @@
 
 	<footer id="colophon" class="site-footer py-2 bg-dark text-light">
 		<div class="site-info container text-center">
-			&copy; <a href="<?php echo esc_url(home_url('/')) ?>">IPO Tracker</a>.
-			<div class="text-muted"><small>designed by <a href="https://twitter.com/diechang_inv" target="_blank">Diechang.</small></div>
+			<?php
+				wp_nav_menu( array(
+					'theme_location' => 'footer',
+					'depth'          => 1,
+					'menu_class'     => 'list-inline m-0',
+
+				) );
+			?>
+			<div class="text-white-50">
+				<small>
+					&copy; <a href="<?php echo esc_url(home_url('/')) ?>">IPO Tracker</a>.
+					designed by <a href="https://twitter.com/diechang_inv" target="_blank">Diechang.</a>
+				</small>
+			</div>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
