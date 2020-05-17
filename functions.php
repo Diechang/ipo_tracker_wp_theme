@@ -186,3 +186,6 @@ function new_excerpt_more($more) {
 	return ' ... ';
 }
 add_filter('excerpt_more', 'new_excerpt_more');
+
+// ショートコード
+require get_template_directory() . '/inc/shortcords.php';
